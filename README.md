@@ -54,6 +54,9 @@ public class Customer : DocumentBase<Customer>  // Provides persistence logic an
 
 ...
 
+// Adds a new DocumentDbRepo to the context 
+RepoContext.AddDocumentDbRepo(endpoint, key, dbName, collection);
+
 // Create
 await Customer.Create(customerInstance);
 Console.WriteLine("The instance was created with this id: " + customerInstance.id);
