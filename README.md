@@ -43,7 +43,7 @@ await repo.Remove(customer.id);
 ```c#
 using NoRepo;
 
-[Storable("CustomersCollection")]  // Specifies the collection in which this document will be stored
+[Storable("CustomersRepository")]  // Specifies the repository in which this document will be stored. For a DocumentDbRepo this is the collection name.
 public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute.
 {
   public string FirstName { get; set; }
@@ -81,6 +81,36 @@ IEnumerable<Customer> customers = await Customer.Where(c => c.FirstName == "John
 await Customer.Remove(customer.id);
 
 ```
+
+## How to extend to other repositories
+- Just create your own implementation of the IRepository interface
+
+```c#
+using NoRepo;
+
+public class MyOwnRepo : IRepository
+{
+  //TODO: Add implementation methods.
+}
+
+RepoContext.AddRepository("MyOwnRepo", new MyOwnRepo);
+
+[Storable("MyOwnRepo")] 
+public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute.
+{
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public string CompanyName { get set;}
+  //TODO: other props
+}
+
+
+
+```
+
+
+
+
 
 
 
