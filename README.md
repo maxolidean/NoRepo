@@ -17,24 +17,67 @@ using NoRepo;
 var repo = DocumentDbRepo(endpoint, key, dbName, collection);
 
 // Create a document
-customerInstance.id = repo.Create<Customer>(customerInstance);
+customerInstance.id = await repo.Create<Customer>(customerInstance);
 
 // Upsert a document
-customerInstance.id = repo.Upsert<Customer>(customerInstance);
+customerInstance.id = await repo.Upsert<Customer>(customerInstance);
 
 // Get an existing 
-var customer = repo.Get<Customer>(id);
+var customer = await repo.Get<Customer>(id);
 
 // First or Default
-var customer = repo.FirstOrDefault<Customer>(c => c.FirstName == "John" && c.LastName == "Coltrane");
+var customer = await repo.FirstOrDefault<Customer>(c => c.FirstName == "John" && c.LastName == "Coltrane");
 
 // Where
-var customers = repo.Where<Customer>(c => c.LastName == "Coltrane");
+var customers = await repo.Where<Customer>(c => c.LastName == "Coltrane");
 
 // Query
-var customers = repo.Query<Customer>("select * from c where c.LastName = 'Coltraner'");
+var customers = await repo.Query<Customer>("select * from c where c.LastName = 'Coltraner'");
 
 // Remove
-repo.Remove(customer.id);
+await repo.Remove(customer.id);
 
 ```
+
+## Inheritance & Attributes
+```c#
+using NoRepo;
+
+[Storable("CustomersCollection")]  // Specifies the collection in which this document will be stored
+public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute.
+{
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public string CompanyName { get set;}
+  //TODO: other props
+}
+
+...
+
+// Create
+await Customer.Create(customerInstance);
+Console.WriteLine("The instance was created with this id: " + customerInstance.id);
+
+// Upsert
+var id = Guid.NewId().ToString();
+await Customer.Upsert(id, customerInstance);
+
+// Get
+Customer customer = await Customer.Get(id);  //throws exception if not exists
+
+// First
+Cuastomer customer = await Customer.First(c => c.LastName == "Coltrane");  //throws exception if not found
+
+// First or default
+Customer customer = await Customer.FirstOrDefault(c => c.LastName == "Coltrane");  // returns null if not found
+
+//Where 
+IEnumerable<Customer> customers = await Customer.Where(c => c.FirstName == "John"); 
+
+//Remove
+await Customer.Remove(customer.id);
+
+```
+
+
+
