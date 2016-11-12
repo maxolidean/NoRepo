@@ -6,7 +6,7 @@
 
 
 ## Usage
-You can choose one choose one of two modes of usage.
+You can choose one of two modes of usage.
 - Direct
 - Inheritance & attributes
 
