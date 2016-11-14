@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NoRepo")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("This not only a repository pattern implematation but also a DocumentDb mini-ORM client to simplify the development with noSql databases.")]
+[assembly: AssemblyConfiguration("Release")]
+[assembly: AssemblyCompany("Lagash S.A.")]
 [assembly: AssemblyProduct("NoRepo")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
@@ -33,4 +33,5 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionAttribute.cs" />
+    <Compile Include="StorableAttribute.cs" />
     <Compile Include="DocumentBase.cs" />
     <Compile Include="DocumentDbRepo.cs" />
     <Compile Include="IRepository.cs" />
@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="NoRepo.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
