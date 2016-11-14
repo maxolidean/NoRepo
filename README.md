@@ -4,6 +4,8 @@
 - Includes an implementation for Azure DocumentDb.
 - Supports partitioned collections
 
+# Nuget
+https://www.nuget.org/packages/NoRepo/1.0.0
 
 ## Usage
 You can choose one of two modes of usage.
