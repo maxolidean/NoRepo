@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/maxolidean/NoRepo</projectUrl>
     <iconUrl>https://github.com/maxolidean/NoRepo/blob/master/NoRepo/Lagash_iso_azul_64.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>This not only a repository pattern implematation but also a DocumentDb mini-ORM client to simplify the development with noSql databases.</description>
+    <description>This is *not only* a repository pattern implematation but also a DocumentDb mini-ORM client to simplify the development with noSql databases.</description>
     <releaseNotes>This is the first release. Feel free to send any feedback and questions to sergiob@lagash.com.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
