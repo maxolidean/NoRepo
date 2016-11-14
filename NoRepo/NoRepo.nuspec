@@ -1,18 +1,22 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>NoRepo</id>
+    <version>1.0.0</version>
+    <title>NoRepo by Lagash</title>
+    <authors>Maxolidean</authors>
+    <owners>Lagash S.A.</owners>
     <licenseUrl>https://github.com/maxolidean/NoRepo/blob/master/Licence.txt</licenseUrl>
     <projectUrl>https://github.com/maxolidean/NoRepo</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <iconUrl>https://github.com/maxolidean/NoRepo/blob/master/NoRepo/Lagash_iso_azul_64.png?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>This not only a repository pattern implematation but also a DocumentDb mini-ORM client to simplify the development with noSql databases.</description>
     <releaseNotes>This is the first release. Feel free to send any feedback and questions to sergiob@lagash.com.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="9.0.1"/>
+      <dependency id="Microsoft.Azure.DocumentDB" version="1.10.0"/>
+    </dependencies>
   </metadata>
 </package>
