@@ -32,7 +32,7 @@ var customer = await repo.FirstOrDefault<Customer>(c => c.FirstName == "John" &&
 var customers = await repo.Where<Customer>(c => c.LastName == "Coltrane");
 
 // Query
-var customers = await repo.Query<Customer>("select * from c where c.LastName = 'Coltraner'");
+var customers = await repo.Query<Customer>("select * from c where c.LastName = 'Coltrane'");
 
 // Remove
 await repo.Remove(customer.id);
