@@ -44,7 +44,7 @@ await repo.Remove(customer.id);
 using NoRepo;
 
 [Storable("CustomersRepository")]  // Specifies the repository in which this document will be stored. For a DocumentDbRepo this is the collection name.
-public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute.
+public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute. Also adds _docType attribute that is used to filter queries on specific types.
 {
   public string FirstName { get; set; }
   public string LastName { get; set; }
