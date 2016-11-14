@@ -52,6 +52,9 @@ public class Customer : DocumentBase<Customer>  // Provides persistence logic an
   //TODO: other props
 }
 
+//Prtitioned collections are supported by passing the partionKey parameter in the attribute.
+[Storable("CustomersRepository", PartionKey = "CompanyName" )] 
+
 ...
 
 // Adds a new DocumentDbRepo to the context 
