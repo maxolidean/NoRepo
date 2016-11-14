@@ -32,7 +32,7 @@ var customer = await repo.FirstOrDefault<Customer>(c => c.FirstName == "John" &&
 var customers = await repo.Where<Customer>(c => c.LastName == "Coltrane");
 
 // Query
-var customers = await repo.Query<Customer>("select * from c where c.LastName = 'Coltraner'");
+var customers = await repo.Query<Customer>("select * from c where c.LastName = 'Coltrane'");
 
 // Remove
 await repo.Remove(customer.id);
@@ -44,13 +44,16 @@ await repo.Remove(customer.id);
 using NoRepo;
 
 [Storable("CustomersRepository")]  // Specifies the repository in which this document will be stored. For a DocumentDbRepo this is the collection name.
-public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute.
+public class Customer : DocumentBase<Customer>  // Provides persistence logic and "id" attribute. Also adds _docType attribute that is used to filter queries on specific types.
 {
   public string FirstName { get; set; }
   public string LastName { get; set; }
   public string CompanyName { get set;}
   //TODO: other props
 }
+
+//Prtitioned collections are supported by passing the partionKey parameter in the attribute.
+[Storable("CustomersRepository", PartionKey = "CompanyName" )] 
 
 ...
 
